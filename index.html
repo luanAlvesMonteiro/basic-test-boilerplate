@@ -4,14 +4,106 @@
     <title>Front End Test - Greenthumb</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./index.scss" />
+    <script src="./main.js" type="module" defer></script>
   </head>
-
   <body>
-    <img src="images/icons/logo-white.svg" alt="Greenthumb" />
+    
+    <div class="topo bg-verde-1 ">      
+      <div class="img-background">
+        <div class="controle">
+          <div class="linha">
+            <div class="coluna-10 coluna-sm-6 ps-sm-5">
+              <img class="mt-5 mb-4" src="images/icons/logo-white.svg" alt="Greenthumb" />
+              <h1 class="txt-branco-1">Find your next green friend</h1>
+              <img class="mt-4 mb-5" src="images/icons/arrow-down.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controle py-5 filtro">
+      <form >
+      <div class="linha txt-cinza-1 fnt-14">
+        <div class="coluna-12 coluna-md-4  px-5">
+          <div class="controle-img">
+            <img width="75px" src="images/illustrations/sun.png"/>
+          </div>          
+          <p><strong>1.</strong> Set the amount of <strong>sunlight</strong> your plant will get.</p>
+          <select class="caixa-entrada" id="sol"> 
+            <option value="">Select...</option>
+            <option value="no">No</option>
+            <option value="low">Low</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div class="coluna-12 coluna-md-4 py-5 py-md-0 px-5">
+          <div class="controle-img">
+            <img width="103px" src="images/illustrations/wateringcan.png"/>
+          </div>          
+          <p><strong>2.</strong> How often do you want to <strong>water</strong> your plant?</p>
+          <select class="caixa-entrada" id="agua"> 
+            <option value="">Select...</option>
+            <option value="regularly">Regularly</option>
+            <option value="daily">Daily</option>
+            <option value="rarely">Rarely</option>            
+          </select>          
+        </div>
+        <div class="coluna-12 coluna-md-4 px-5">
+          <div class="controle-img">
+            <img width="75px" src="images/illustrations/dog.png"/>
+          </div>          
+          <p><strong>3.</strong> Do you have pets? Do they <strong>chew</strong> plants? </p>
+          <select class="caixa-entrada" id="pets"> 
+            <option value="">Select...</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>          
+        </div>                      
+      </div>
+      </form> 
+    </div>
+
+    <section class="bg-cinza-1 py-5 itens" id="semResultado" style="display: block;">
+      <div class="controle" >
+        <div class="linha mt-5 px-5">
+          <div class="coluna-12 coluna-sm-10">
+            <h1 class="titulo-pagina txt-cinza-2">No results yet...</h1>
+            <p class="txt-cinza-2 w-sm-custom">Use the filters above to find the plant that best fits your environment :)</p>
+          </div>
+          <div class="coluna-12 coluna-sm-2 txt-center mt-5 mt-sm-0">
+            <img width="100px" src="images/illustrations/no-results.png"/>
+          </div>
+        </div> 
+      </div>
+    </section>
+
+    <section class="bg-cinza-1 py-5 itens" id="comResultado" style="display: none;">      
+      <div class="controle" >
+        <div class="linha">
+          <div class="coluna-12 px-5">
+            <img width="158px" src="images/illustrations/pick.png"/>
+            <h1 class="titulo-pagina txt-preto-1">Our picks for you</h1>
+          </div>
+        </div>
+      </div>
+      <div class="controle">       
+        <div class="linha-fluido mt-5 px-4" id="app">
+        </div>       
+      </div>
+      <div class="controle mt-5">
+        <div class="linha  px-4">
+          <div class="coluna-12">
+            <button class="btn-full" id="voltarTopo">
+              <img height="13px" src="images/icons/arrow-up.svg" />
+              <span>back to the top</span>
+            </button>
+          </div>
+        </div> 
+      </div>
+    </section>
+
   </body>
 </html>
